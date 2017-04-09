@@ -15,10 +15,11 @@ object MyModule {
 
   def main(args: Array[String]): Unit =
     println(formatAbs(-42))
+    println(formatFactorial(7))
 
   // A definition of factorial, using a local, tail recursive function
   def factorial(n: Int): Int = {
-    @annotation.tailrec
+//    @annotation.tailrec
     def go(n: Int, acc: Int): Int =
       if (n <= 0) acc
       else go(n - 1, n * acc)
@@ -42,10 +43,10 @@ object MyModule {
   def fib(n: Int): Int = {
     @annotation.tailrec
     def loop(n: Int, prev: Int, current: Int): Int =
-      if ( n <= 1) prev
-      else loop(n-1,current  ,prev+current)
+      if (n ==0 ) prev
+      else loop(n - 1, current, prev + current)
 
-    loop(n,0,1)
+    loop(n, 0, 1)
 
   }
 
